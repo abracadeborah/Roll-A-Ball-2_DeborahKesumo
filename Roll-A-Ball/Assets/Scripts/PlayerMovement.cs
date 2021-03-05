@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Text displayText;
+    public Color welcomeColor;
+    public Color scoreColor;
+    public Color winColor;
+     
     public Rigidbody rb;
     public float jumpForce;
     public float moveSpeed;
     private int score = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        displayText.color = welcomeColor;
 
     }
 
@@ -27,7 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (score >= 8)
         {
-            print("Congrats! You're the coolest potato!");
+            
+            displayText.text = "VICTORY!";
+            displayText.color = scoreColor;
         }
 
    
@@ -39,10 +49,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(otherObject.gameObject);
             score = score + 1;
-            print("Score = "+ score);
+            print("Score = " + score);
             // score += 1;
             // score++;
             // All three lines can be used to add 1 point to the score
+            displayText.text = "SCORE = " + score;
+            displayText.color = winColor;
         }
     }
 }
