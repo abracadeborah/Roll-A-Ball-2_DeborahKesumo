@@ -7,7 +7,7 @@ public class GoodbyeWorld : MonoBehaviour
     // Start is called before the first frame update
     public int playerHealth = 100;
     float gameTime = 0.5f;
-    string welcomeMessage = "Welcome to Roll-A-Ball! >:)";
+    string welcomeMessage = "Welcome to... Roll-A-Ball!!";
     bool playerDead = false;
 
     void Start()

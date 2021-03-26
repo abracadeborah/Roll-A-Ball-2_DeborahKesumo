@@ -33,11 +33,11 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical") * moveSpeed;
         rb.AddForce(x, 0, z);
 
-        if (score >= 8)
+        if (score >= 15)
         {
             
-            displayText.text = "Victory!.. Or is it?";
-            displayText.color = scoreColor;
+            displayText.text = "YOU ARE.. VICTORIOUS!";
+            displayText.color = winColor;
         }
 
    
@@ -53,8 +53,8 @@ public class PlayerMovement : MonoBehaviour
             // score += 1;
             // score++;
             // All three lines can be used to add 1 point to the score
-            displayText.text = "SCORE = " + score;
-            displayText.color = winColor;
+            displayText.text = "SCORE: " + score;
+            displayText.color = scoreColor;
         }
     }
 }
