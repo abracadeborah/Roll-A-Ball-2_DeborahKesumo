@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         if (score >= 8)
         {
             
-            displayText.text = "VICTORY!";
+            displayText.text = "Victory!.. Or is it?";
             displayText.color = scoreColor;
         }
 
