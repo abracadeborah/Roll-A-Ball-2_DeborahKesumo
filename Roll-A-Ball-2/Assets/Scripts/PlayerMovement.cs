@@ -14,11 +14,19 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float moveSpeed;
     private int score = 0;
+    public GameObject gameOverScreen;
+    GameObject resetPoint;
+    bool resetting = false;
+    Color originalColour;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         displayText.color = welcomeColor;
+        gameOverScreen.SetActive(false);
+
+        resetPoint = GameObject.Find("Reset Point");
+        originalColour = GetComponent<Renderer>().material.color;
 
     }
 
@@ -29,16 +37,22 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
         }
+
+        if (resetting)
+            return;
+
         float x = Input.GetAxis("Horizontal") * moveSpeed;
         float z = Input.GetAxis("Vertical") * moveSpeed;
         rb.AddForce(x, 0, z);
 
         if (score >= 15)
         {
-            
+            gameOverScreen.SetActive(true);
             displayText.text = "YOU ARE.. VICTORIOUS!";
             displayText.color = winColor;
         }
+
+        
 
    
     }
@@ -57,4 +71,35 @@ public class PlayerMovement : MonoBehaviour
             displayText.color = scoreColor;
         }
     }
+
+    public IEnumerator ResetPlayer()
+    {
+        resetting = true;
+        GetComponent<Renderer>().material.color = Color.black;
+        rb.velocity = Vector3.zero;
+        Vector3 startPost = transform.position;
+        float resetSpeed = 2f;
+        var i = 0.0f;
+        var rate = 1.0f / resetSpeed;
+        while (i < 1.0f)
+        {
+            i += Time.deltaTime * rate;
+            transform.position = Vector3.Lerp(startPost, resetPoint.transform.position, i);
+            yield return null;
+        }
+        GetComponent<Renderer>().material.color = originalColour;
+        resetting = false;
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag ("Respawn"))
+        {
+            StartCoroutine(ResetPlayer());
+        }
+    }
+
+   
+       
 }
