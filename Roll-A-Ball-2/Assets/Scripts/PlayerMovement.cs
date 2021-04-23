@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float moveSpeed;
     private int score = 0;
+    private int pickupCount;
     public GameObject gameOverScreen;
     GameObject resetPoint;
     bool resetting = false;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         displayText.color = welcomeColor;
+        pickupCount = GameObject.FindGameObjectsWithTag("PickUp").Length;
         gameOverScreen.SetActive(false);
 
         resetPoint = GameObject.Find("Reset Point");
@@ -45,15 +47,12 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical") * moveSpeed;
         rb.AddForce(x, 0, z);
 
-        if (score >= 15)
+        if (score >= pickupCount)
         {
             gameOverScreen.SetActive(true);
             displayText.text = "YOU ARE.. VICTORIOUS!";
             displayText.color = winColor;
         }
-
-        
-
    
     }
      private void OnTriggerEnter(Collider otherObject)
