@@ -14,7 +14,7 @@ public class Rotator : MonoBehaviour
     void Update()
 
     {
-        Vector3 turn = new Vector3(15, 30, 45) * Time.deltaTime;
+        Vector3 turn = new Vector3(0, 45, 0) * Time.deltaTime;
         transform.Rotate(turn);
     }
 }
