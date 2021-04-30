@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3942516302310867676}
   - component: {fileID: 7999193639940724297}
   m_Layer: 0
-  m_Name: Point Light (2)
+  m_Name: Light Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0, g: 1, b: 0.95363927, a: 1}
+  m_Color: {r: 1, g: 0.29682136, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30

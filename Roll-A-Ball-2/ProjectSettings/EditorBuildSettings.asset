@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 04285a9f007697641a6b132de7fe520a
   - enabled: 1
-    path: Assets/Scenes/Roll-a-ball_level-1.unity
+    path: Assets/Scenes/Level 1.unity
     guid: cfe82a774c3805743a98d5c22ab943ac
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: e97a51571b923604b969783060c3c810
   m_configObjects: {}

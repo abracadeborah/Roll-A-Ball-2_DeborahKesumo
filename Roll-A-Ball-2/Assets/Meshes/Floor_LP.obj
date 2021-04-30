@@ -1,5 +1,7 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
+mtllib Floor_LP.mtl
+g default
 v -3.000000 0.000000 0.000000
 v 0.000000 0.000000 0.000000
 v -3.000000 0.000000 -3.000000
@@ -8,4 +10,11 @@ vt 0.000000 0.000000
 vt 1.000000 0.000000
 vt 0.000000 1.000000
 vt 1.000000 1.000000
-f 1/1 2/2 4/4 3/3
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+s off
+g Floor_LP2 v2
+usemtl initialShadingGroup
+f 1/1/1 2/2/2 4/4/3 3/3/4
