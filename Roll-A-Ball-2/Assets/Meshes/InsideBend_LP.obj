@@ -832,7 +832,7 @@ vn 0.929723 0.000000 0.368261
 vn 0.929723 0.000000 0.368261
 vn 0.929723 0.000000 0.368261
 s 1
-g InsideBend_LP2 Low_Poly v2
+g InsideBend_LP1 Low_Poly v2
 usemtl initialShadingGroup
 f 1/209/1 61/210/2 62/211/3 3/212/4
 s 2
