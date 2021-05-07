@@ -35,11 +35,6 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-        }
-
         if (resetting)
             return;
 
