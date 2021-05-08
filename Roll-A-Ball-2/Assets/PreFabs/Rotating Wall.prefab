@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 0
-  speed: 10
+  speed: 30
   toRotation: {x: 0, y: 90, z: 0}
